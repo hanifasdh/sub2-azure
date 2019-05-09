@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2>Upload new Photo</h2>
-    <form action="upload.php">
+    <form action="upload.php" method="post" enctype="multipart/form-data">
         <input type="file" name="file" id="file">
         <input type="submit" value="Upload" name="upload">
     </form>
