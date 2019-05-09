@@ -82,6 +82,7 @@
     <input type="text" name="inputImage" id="inputImage"
         value="<?php echo $url; ?>" />
     <button onclick="processImage()">Analyze image</button>
+    <a href="index.php"><button>Back to Main</button></a>
     <br><br>
     <div id="wrapper" style="width:1020px; display:table;">
         <div id="jsonOutput" style="width:600px; display:table-cell;">
