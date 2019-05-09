@@ -1,29 +1,3 @@
-<?php 
-    require_once 'vendor/autoload.php';
-        
-    use MicrosoftAzure\Storage\Blob\BlobRestProxy;
-    use MicrosoftAzure\Storage\Common\Exceptions\ServiceException;
-    use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
-    use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
-    use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
-        
-    $connectionString = "DefaultEndpointsProtocol=https;AccountName=meirusfandiwev;AccountKey=vwhIwbU1kaFKEZMFWTd5ng21ux0PA8P8XRgUgo6atp8xbKPYFStk5vz+7/lTIG8SyZ/37LGfYqQxqbsX/EIwCQ==;EndpointSuffix=core.windows.net";
-        
-    // Create blob client.
-    $blobClient = BlobRestProxy::createBlobService($connectionString);
-        
-    // // Create container options object.
-    // $createContainerOptions = new CreateContainerOptions();
-        
-    // $createContainerOptions->setPublicAccess(PublicAccessType::CONTAINER_AND_BLOBS);
-        
-    // // Set container metadata.
-    // $createContainerOptions->addMetaData("key1", "value1");
-    // $createContainerOptions->addMetaData("key2", "value2");
-            
-    $containerName = "blockblobs";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,10 +46,22 @@
             <th colspan="2">Aksi</th>
         </thead>
         <tbody>
-        <?php 
-            // if (isset($_POST['delete'])) {
-
-            // }
+        <?php
+            require_once 'vendor/autoload.php';
+            
+            use MicrosoftAzure\Storage\Blob\BlobRestProxy;
+            use MicrosoftAzure\Storage\Common\Exceptions\ServiceException;
+            use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
+            use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
+            use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
+                
+            $connectionString = "DefaultEndpointsProtocol=https;AccountName=meirusfandiwev;AccountKey=vwhIwbU1kaFKEZMFWTd5ng21ux0PA8P8XRgUgo6atp8xbKPYFStk5vz+7/lTIG8SyZ/37LGfYqQxqbsX/EIwCQ==;EndpointSuffix=core.windows.net";
+                
+            // Create blob client.
+            $blobClient = BlobRestProxy::createBlobService($connectionString);
+                    
+            $containerName = "blockblobs";
+            
             // List blobs.
             $listBlobsOptions = new ListBlobsOptions();
             $listBlobsOptions->setPrefix("");
