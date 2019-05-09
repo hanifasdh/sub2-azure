@@ -2,12 +2,12 @@
     require_once 'vendor/autoload.php';
         
     use MicrosoftAzure\Storage\Blob\BlobRestProxy;
-    use MicrosoftAzure\Storage\Common\Exceptions\ServiceException;
-    use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
-    use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
-    use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
+    // use MicrosoftAzure\Storage\Common\Exceptions\ServiceException;
+    // use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
+    // use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
+    // use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
         
-    $connectionString = "DefaultEndpointsProtocol=https;AccountName=meirusfandiwev;AccountKey=vwhIwbU1kaFKEZMFWTd5ng21ux0PA8P8XRgUgo6atp8xbKPYFStk5vz+7/lTIG8SyZ/37LGfYqQxqbsX/EIwCQ==;EndpointSuffix=core.windows.net";
+    $connectionString = "DefaultEndpointsProtocol=https;AccountName=hanifasdh;AccountKey=kmEDQnhUUPf4wscAbcToRBkQc7oHk/goVU031v7g3/KWmLDcsEeim1+WyuXj0Pk5xNtWRsfR/5FP3Cefl4fxKg==;";
         
     // Create blob client.
     $blobClient = BlobRestProxy::createBlobService($connectionString);
