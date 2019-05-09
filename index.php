@@ -10,6 +10,7 @@
             font-family: sans-serif;
             color: #444;
             border-collapse: collapse;
+            border: 1;
             width: 50%;
             border: 1px solid #f2f5f7;
         }
@@ -75,10 +76,20 @@
             <tr>
                 <td><?php echo ++$i; ?></td>
                 <td><?php echo $blob->getName(); ?></td>
-                <td><?php echo $blob->getUrl(); ?></td>
+                <td width="200"><?php echo $blob->getUrl(); ?></td>
                 <td><img src="<?php echo $blob->getUrl(); ?>"></td>
-                <td><?php echo "Analyze"; ?></td>
-                <td><?php echo "Delete"; ?></td>
+                <td>
+                    <form action="analyze.php" method="post">
+                        <input type="hidden" name="link" value="<?php echo $blob->getUrl();?>">
+                        <input type="submit" value="Analyze" name="analyze">
+                    </form>
+                </td>
+                <td>
+                    <form action="index.php" method="post">
+                        <input type="hidden" name="link" value="<?php echo $blob->getUrl();?>">
+                        <input type="submit" value="Delete" name="delete">
+                    </form>
+                </td>
             </tr>
         <?php 
                 }
