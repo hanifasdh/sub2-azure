@@ -62,7 +62,7 @@
 </head>
 <body>
     <h2>Daftar Gambar dan file dari Azure Blob Storage</h2>
-    <button></button>
+    <a href="upload.php"><button>Upload Photo</button></a>
     <table class="table">
         <thead>
             <th>No. </th>
