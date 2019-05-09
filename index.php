@@ -10,7 +10,6 @@
             font-family: sans-serif;
             color: #444;
             border-collapse: collapse;
-            border: 1;
             width: 50%;
             border: 1px solid #f2f5f7;
         }
@@ -38,7 +37,7 @@
 <body>
     <h2>Daftar Gambar dan file dari Azure Blob Storage</h2>
     <a href="upload.php"><button>Upload Photo</button></a>
-    <table class="table">
+    <table class="table" border="1">
         <thead>
             <th>No. </th>
             <th>Nama File</th>
@@ -63,6 +62,11 @@
                     
             $containerName = "blockblobs";
 
+            if (isset($_POST['delete'])){
+                $blobClient->deleteBlob($containerName, $_POST['file']);
+                echo "Delete file successfully";
+            }
+
             // List blobs.
             $listBlobsOptions = new ListBlobsOptions();
             $listBlobsOptions->setPrefix("");
@@ -86,7 +90,7 @@
                 </td>
                 <td>
                     <form action="index.php" method="post">
-                        <input type="hidden" name="link" value="<?php echo $blob->getUrl();?>">
+                        <input type="hidden" name="file" value="<?php echo $blob->getName();?>">
                         <input type="submit" value="Delete" name="delete">
                     </form>
                 </td>
